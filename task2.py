@@ -2,7 +2,7 @@ import cv2
 
 img1 = cv2.imread(r'./source/meow1.jpeg',cv2.IMREAD_GRAYSCALE) #ЧБ
 img2 = cv2.imread(r'./source/meow2.png',cv2.IMREAD_UNCHANGED)
-img3 = cv2.imread(r'./source/meow3.bmp',cv2.IMREAD_ANYDEPTH) #глубина цвета
+img3 = cv2.imread(r'./source/meow3.bmp',cv2.IMREAD_REDUCED_GRAYSCALE_4)
 
 cv2.namedWindow('test1', cv2.WINDOW_AUTOSIZE)
 cv2.namedWindow('test2', cv2.WINDOW_FULLSCREEN)
