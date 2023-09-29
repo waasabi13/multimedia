@@ -3,7 +3,7 @@ import numpy as np
 
 
 def BlurFuss():
-    img = cv2.imread("output/meow1.jpeg", cv2.IMREAD_GRAYSCALE)
+    img = cv2.imread("output/meow2.png", cv2.IMREAD_GRAYSCALE)
 
     #  размер ядра фильтра и стандартное отклонение
     kernel_size = 5
