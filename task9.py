@@ -1,7 +1,7 @@
 import time
 import cv2
 def rtspCamera():
-    rtsp_str = 'http://admin:admin@192.168.1.20:8081/video'
+    rtsp_str = 'http://admin:admin@212.192.144.234:8081/video'
     video = cv2.VideoCapture(rtsp_str)
     while True:
         ok, img = video.read()
