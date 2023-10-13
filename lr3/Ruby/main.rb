@@ -6,10 +6,10 @@ def blur_fuss
 
   # Размер ядра фильтра и стандартное отклонение
   kernel_size = 5
-  standard_deviation = 100
+  standard_deviation = 10
 
   img_blur1 = gauss_blur(grayscale_image, kernel_size, standard_deviation)
-  save_image(img_blur1, 'output/meow2_blur1.png')
+  img_blur1.save( 'output/meow2_blur1.png')
 
 
   # Другие параметры
@@ -34,8 +34,8 @@ def gauss_blur(image, kernel_size, standard_deviation)
     end
   end
 
-  puts kernel.map { |row| row.join(' ') }
-  puts '//////////'
+  puts kernel.map { |row| row.join('; ') }
+  puts '-----------------------------------------------------------------------------'
 
   # Нормализуем для сохранения яркости изображения
   sum = kernel.flatten.reduce(:+)

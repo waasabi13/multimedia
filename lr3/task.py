@@ -7,17 +7,17 @@ def BlurFuss():
 
     #  размер ядра фильтра и стандартное отклонение
     kernel_size = 5
-    standard_deviation = 100
+    standard_deviation = 5
 
     imgBlur1 = GaussBlur(img, kernel_size, standard_deviation)
-    cv2.imshow("5*100", imgBlur1)
+    cv2.imshow("5*5", imgBlur1)
 
     # другие параметры
     kernel_size = 11
-    standard_deviation = 50
+    standard_deviation = 10
 
     imgBlur2 = GaussBlur(img, kernel_size, standard_deviation)
-    cv2.imshow("11*50", imgBlur2)
+    cv2.imshow("11*10", imgBlur2)
 
     imgBlurOpenCV = cv2.GaussianBlur(img, (kernel_size, kernel_size), standard_deviation)
 
@@ -36,7 +36,7 @@ def GaussBlur(img, kernel_size, standard_deviation):
             kernel[i, j] = gauss(i, j, standard_deviation, a, b)
 
     print(kernel)
-    print("//////////")
+    print("-----------------------------------------------------------------")
     # нормализуем для сохранения яркости изображения
     sum = 0
     for i in range(kernel_size):
@@ -69,7 +69,6 @@ def GaussBlur(img, kernel_size, standard_deviation):
 # коорд.пикселя, станд.откл, координаты центра ядра
 def gauss(x, y, omega, a, b):
     omega2 = 2 * omega ** 2
-
     m1 = 1 / (np.pi * omega2)
     m2 = np.exp(-((x - a) ** 2 + (y - b) ** 2) / omega2)
 
